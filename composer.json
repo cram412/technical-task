@@ -1,0 +1,16 @@
+{
+    "name": "cram/zootest",
+    "type": "project",
+    "require": {
+        "php": ">=5.5"
+    },
+    "authors": [
+        {
+            "name": "Oleg Kraminsky",
+            "email": "cram.oleg@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"App\\": "./app/classes/"}
+    }
+}
