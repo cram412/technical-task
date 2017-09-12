@@ -4,7 +4,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 $logger = new \App\Log\HtmlLogger();
 
-$animals = ['Cat', 'Dog', 'Sparrow', 'Rat'];
+$animals = ['Cat', 'Dog', 'Sparrow', 'Rat', 'Penguin'];
 
 foreach ($animals as $animal) {
     $class = '\\App\\Zoo\\' . $animal;
@@ -15,4 +15,4 @@ foreach ($animals as $animal) {
     $model->live()->eat();
 }
 
-$logger->outputLog();
+$logger->outputLog( );
