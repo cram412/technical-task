@@ -1,12 +1,11 @@
 <?php
-
-namespace Zoo;
+namespace App\Zoo\Animal;
 
 /**
- * Class MammalAbstract
- * @package Zoo
+ * Class WalkTrait
+ * @package Zoo\Animal
  */
-abstract class MammalAbstract extends AnimalAbstract
+trait WalkTrait
 {
     /**
      * @return $this

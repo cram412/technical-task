@@ -1,20 +1,22 @@
 <?php
-namespace Zoo;
+namespace App\Zoo;
+
+use App\Zoo\Animal\FlyInterface;
+use App\Zoo\Animal\WalkInterface;
+use App\Zoo\Animal\WalkTrait;
 
 /**
  * Class Sparrow
  * @package Zoo
  */
-class Sparrow extends BirdAbstract
+class Sparrow extends AnimalAbstract implements FlyInterface, WalkInterface
 {
+    use WalkTrait;
+
     /**
-     * Sparrow constructor.
+     * @var string
      */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->_name = 'sparrow';
-    }
+    protected $_name = 'sparrow';
 
     /**
      * {@inheritdoc}
@@ -34,7 +36,7 @@ class Sparrow extends BirdAbstract
     }
 
     /**
-     * {@inheritdoc}
+     * @return $this
      */
     public function tweet()
     {

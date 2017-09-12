@@ -1,20 +1,16 @@
 <?php
-namespace Zoo;
+namespace App\Zoo;
 
 /**
  * Class Rat
  * @package Zoo
  */
-class Rat extends MammalAbstract
+class Rat extends AnimalAbstract
 {
     /**
-     * Rat constructor.
+     * @var string
      */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->_name = 'rat';
-    }
+    protected $_name = 'rat';
 
     /**
      * {@inheritdoc}

@@ -1,37 +1,33 @@
 <?php
 
-namespace Zoo;
+namespace App\Zoo;
 
-use Log\Logger;
+use App\Log\LoggerInterface;
+use App\Zoo\Animal\AnimalInterface;
 
 /**
  * Class AnimalAbstract
  * @package Zoo
  */
-abstract class AnimalAbstract {
+abstract class AnimalAbstract implements AnimalInterface
+{
     /**
      * @var string
      */
     protected $_name;
 
     /**
-     * @var Logger
+     * @var LoggerInterface
      */
     protected $_logger;
 
     /**
      * AnimalAbstract constructor.
      */
-    public function __construct()
+    public function __construct(LoggerInterface $logger)
     {
-        $this->_logger = Logger::getInstance();
+        $this->_logger = $logger;
     }
-
-    /**
-     * do live cycle
-     * @return $this
-     */
-    abstract public function live();
 
     /**
      * @param string $food
@@ -64,7 +60,7 @@ abstract class AnimalAbstract {
      */
     public function __call($name, $arguments)
     {
-        $this->_logger->log($this->_name . ': can\'t ' . $name, Logger::LOGGER_SCOPE_WARNING);
+        $this->_logger->log($this->_name . ': can\'t ' . $name, LoggerInterface::LOGGER_SCOPE_WARNING);
         return $this;
     }
 }

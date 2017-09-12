@@ -1,20 +1,21 @@
 <?php
-namespace Zoo;
+namespace App\Zoo;
+
+use App\Zoo\Animal\WalkInterface;
+use App\Zoo\Animal\WalkTrait;
 
 /**
  * Class Cat
  * @package Zoo
  */
-class Cat extends MammalAbstract
+class Cat extends AnimalAbstract implements WalkInterface
 {
+    use WalkTrait;
+
     /**
-     * Cat constructor.
+     * @var string
      */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->_name = 'cat';
-    }
+    protected $_name = 'cat';
 
     /**
      * {@inheritdoc}
